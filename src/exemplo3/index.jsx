@@ -2,25 +2,30 @@ import { useEffect, useState } from "react";
 
 export default function App() {
   
-  const [??,??] = useState([]);
+  const [produto, setProduto] = useState([]);
 
   useEffect(() => { 
 
-    const  ????  = async () => {
-        const resposta = await fetch('https://randomuser.me/api');
+    const  buscaproduto  = async () => {
+        const resposta = await fetch('https://jsonplaceholder.typicode.com/todos');
         const dados = await resposta.json();
-         //complete o código
+        setProduto(dados)
     }
-    //complete o código
+    buscaproduto();
   }, []);
 
   return (
     <>
-      <h1>Usuário</h1>
+     <h1>Usuário</h1>
       <ul>
         {
-            //complete o código
-        }
+        usuario.map(informacao => (
+          <li key={informacao.id}>
+            <h2>{informacao.title}</h2>
+            <p>{informacao.userId}</p>
+            <p>{informacao.completed}</p>
+        </li>
+        ))}
       </ul>
     </>
   );
