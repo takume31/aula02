@@ -11,15 +11,16 @@ export default function App() {
         const dados = await resposta.json();
         setProduto(dados)
     }
+
     buscaproduto();
+
   }, []);
 
   return (
     <>
      <h1>Usuário</h1>
       <ul>
-        {
-        usuario.map(informacao => (
+        {produto.map(informacao => (
           <li key={informacao.id}>
             <h2>{informacao.title}</h2>
             <p>{informacao.userId}</p>
